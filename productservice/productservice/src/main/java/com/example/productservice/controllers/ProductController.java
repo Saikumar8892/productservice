@@ -25,6 +25,11 @@ public class ProductController {
 	
 	@GetMapping
 	public Iterable<Product> getProducts() {
+		try {
+			Thread.sleep(30000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return repo.findAll();
 	}
 	
@@ -34,6 +39,9 @@ public class ProductController {
 		if (optProduct.isEmpty()) {
 			throw new ProductNotFoundException(id);
 		}
+		System.out.println(optProduct.get());
+		System.out.println("test print 2");
+		System.out.println("TEST PRINT 3");
 		return optProduct.get();
 	}
 	

@@ -10,7 +10,7 @@ public class ExternalApiController {
 
 	@RequestMapping("/weather")
 	public String getWeather(@RequestParam("city") String city) {
-		String url = "http://api.weatherstack.com/current?access_key=983b81658e82999c139c3b0263ccd384&query="+city;
+		String url = "http://api.weatherstack.com/current?access_key=8c7e8ff7112ab72a5886d952e1be4f5a&query="+city;
 		RestTemplate restTemplate = new RestTemplate();
 		String weatherData = restTemplate.getForObject(url, String.class);
 		return weatherData;
